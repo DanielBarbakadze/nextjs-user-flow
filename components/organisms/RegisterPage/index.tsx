@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal, Typography } from "antd";
 import { NextRouter, useRouter } from "next/router";
 
@@ -56,14 +56,19 @@ const RegisterPage = () => {
   const stepIndex = stepsFlow[step];
 
   const handleOnFinish = () => {
-    router.push("/login");
+    // TODO: Need to take a look at useLocalStorage hook
+    const currentData =
+      Object.keys(currentUser).length > 0
+        ? currentUser
+        : JSON.parse(localStorage.getItem("currentUser") || "{}");
 
     setUsersData({
       ...usersData,
-      [currentUser.email as string]: currentUser,
+      [currentData.email as string]: currentData,
     });
 
     localStorage.removeItem("currentUser");
+    router.push("/login");
   };
 
   const handleOnCancel = () => {

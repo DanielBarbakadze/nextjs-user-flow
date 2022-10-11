@@ -58,7 +58,6 @@ const Email = ({ goBack, goToNextStep, onCancel }: CommonStepProps) => {
           { type: "email", required: true },
           () => ({
             validator(_, value) {
-              console.log(Object.keys(usersData), value);
               if (usersData && Object.keys(usersData).includes(value)) {
                 return Promise.reject(
                   new Error("This email is already taken!")
