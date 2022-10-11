@@ -1,18 +1,17 @@
 import type { NextPage } from "next";
 
 import Layout from "@components/templates/Layout";
-import HomePage from "@components/organisms/HomePage";
+import RegisterPage from "@components/organisms/RegisterPage";
 
 const Home: NextPage = () => {
   return (
     <Layout
-      hasInformationalAlert={true}
+      hasInformationalAlert={false}
       hasFooter={true}
-      className="items-center justify-center"
+      className="items-center mt-32 md:mt-64"
+      metaData={{ title: "Registration Flow" }}
     >
-      <main>
-        <HomePage />
-      </main>
+      <RegisterPage />
     </Layout>
   );
 };

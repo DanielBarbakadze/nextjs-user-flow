@@ -1,18 +1,17 @@
 import type { NextPage } from "next";
 
 import Layout from "@components/templates/Layout";
-import HomePage from "@components/organisms/HomePage";
+import LoginPage from "@components/organisms/LoginPage";
 
 const Home: NextPage = () => {
   return (
     <Layout
-      hasInformationalAlert={true}
+      hasInformationalAlert={false}
       hasFooter={true}
       className="items-center justify-center"
+      metaData={{ title: "Login" }}
     >
-      <main>
-        <HomePage />
-      </main>
+      <LoginPage />
     </Layout>
   );
 };

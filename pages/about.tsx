@@ -1,20 +1,19 @@
 import type { NextPage } from "next";
 
 import Layout from "@components/templates/Layout";
-import HomePage from "@components/organisms/HomePage";
+import AboutPage from "@components/organisms/AboutPage";
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   return (
     <Layout
-      hasInformationalAlert={true}
+      hasInformationalAlert={false}
       hasFooter={true}
       className="items-center justify-center"
+      metaData={{ title: "About" }}
     >
-      <main>
-        <HomePage />
-      </main>
+      <AboutPage />
     </Layout>
   );
 };
 
-export default Home;
+export default About;
